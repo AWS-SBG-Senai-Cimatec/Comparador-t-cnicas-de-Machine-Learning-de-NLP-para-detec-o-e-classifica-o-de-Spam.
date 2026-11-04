@@ -21,6 +21,12 @@ Projeto 04 da AWS SBG SENAI CIMATEC. O objetivo é comparar classificadores de t
 
 O dataset indicado tem rótulos binários agregados. O projeto não presume classes independentes para spam e phishing. Consulte [os dados](docs/dados.md) e o [protocolo de avaliação](docs/experimentos.md).
 
+## Quadro de trabalho
+
+[Projeto 04 - AWS SBG SENAI CIMATEC](https://github.com/users/andredeomondes/projects/1)
+
+O quadro acompanha as issues deste repositório e está na conta do responsável técnico. O GitHub permite vincular a aba Projects do repositório somente a quadros da mesma organização.
+
 ## Aulas e entregas
 
 Cada aula tem **A: exercício individual de compreensão** e **B: contribuição integrada ao comparador**. A fica em `exercicios/seu-nome/`; B é entregue por PR nas pastas do projeto.
