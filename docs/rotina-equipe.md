@@ -12,7 +12,7 @@ Dois encontros semanais, com dias, horários e carga individual a combinar. Entr
 
 ## Tarefas
 
-Fluxo: Backlog → Pronto → Em andamento → Em revisão → Concluído. Usar as labels `status:*` enquanto o quadro é configurado. Manter uma tarefa em andamento por pessoa.
+Fluxo: Backlog → Pronto → Em andamento → Em revisão → Concluído. Acompanhar as tarefas no [quadro do Projeto 04](https://github.com/users/andredeomondes/projects/1). As labels `status:*` também permitem filtrar as issues; ao mudar a etapa, manter o cartão e a label coerentes. Manter uma tarefa em andamento por pessoa.
 
 Uma tarefa começa com objetivo, pré-requisito, resultado esperado e revisão definida. Uma tarefa termina com evidência, explicação do autor e critérios verificados. O merge pode fechar a issue com `Closes #NUMERO`.
 
