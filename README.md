@@ -1,2 +1,53 @@
-# Comparador-t-cnicas-de-Machine-Learning-de-NLP-para-detec-o-e-classifica-o-de-Spam.
-Desenvolvimento de um comparador entre técnicas de treinamento de modelos de machine learning de Processamento de linguagem natural (NLP) para detecção e classificação de spam e phishing em mensagens. A fim do desenvolvimento de boas práticas no desenvolvimento de modelos e ciência de dados.
+# Comparador de NLP para mensagens
+
+Projeto 04 da AWS SBG SENAI CIMATEC. O objetivo é comparar classificadores de texto para mensagens, registrar os resultados e disponibilizar uma interface de teste em Streamlit.
+
+**Entrega prevista:** 7 de dezembro de 2026. **Estado atual:** estrutura de trabalho preparada; implementação conduzida nas aulas e nas issues.
+
+## Começar
+
+1. Leia [Comece aqui](docs/COMECE-AQUI.md) e confira sua tarefa nas [issues](https://github.com/AWS-SBG-Senai-Cimatec/Comparador-t-cnicas-de-Machine-Learning-de-NLP-para-detec-o-e-classifica-o-de-Spam./issues).
+2. Prepare o [ambiente](docs/ambiente.md).
+3. Siga o [guia de contribuição](CONTRIBUTING.md): branch, commit, PR e revisão.
+
+## O que será entregue
+
+- Dataset documentado e divisões reproduzíveis de treino, validação e teste.
+- Baseline e dois classificadores: TF-IDF + Naive Bayes e TF-IDF + regressão logística.
+- Comparação com métricas por classe, macro-F1, matriz de confusão e tempo de treino.
+- Pipelines salvos com Joblib e metadados de cada execução.
+- Interface para escolher o modelo, analisar uma mensagem e consultar os resultados.
+- Instruções de reprodução, análise de limitações e proposta de arquitetura AWS.
+
+O dataset indicado tem rótulos binários agregados. O projeto não presume classes independentes para spam e phishing. Consulte [os dados](docs/dados.md) e o [protocolo de avaliação](docs/experimentos.md).
+
+## Aulas e entregas
+
+Cada aula tem **A: exercício individual de compreensão** e **B: contribuição integrada ao comparador**. A fica em `exercicios/seu-nome/`; B é entregue por PR nas pastas do projeto.
+
+- [Trilha de dez aulas](docs/aulas.md)
+- [Construção incremental e critérios de pronto](docs/construcao-incremental.md)
+- [Tarefas publicadas](docs/tarefas.md)
+- [Equipe e revisão](docs/equipe.md)
+- [Rotina de trabalho](docs/rotina-equipe.md)
+
+## Estrutura
+
+```text
+.github/       modelos de issue e PR
+configs/       configurações dos experimentos, quando implementados
+src/           código integrado
+docs/          instruções, aulas e decisões técnicas
+exercicios/    prática individual
+data/exemplos/ dados fictícios para aprender
+data/raw/      base real local, fora do Git
+data/processed/ dados derivados locais, fora do Git
+models/        modelos gerados locais, fora do Git
+reports/       métricas e relatórios sem corpos de e-mails
+```
+
+Os comandos de treino e do aplicativo serão documentados quando essas etapas forem implementadas. O CSV fictício não deve ser usado para apresentar o desempenho do projeto.
+
+## Licença
+
+A licença do código está em [LICENSE](LICENSE). O dataset tem sua própria licença e atribuição, documentadas em [docs/dados.md](docs/dados.md).
