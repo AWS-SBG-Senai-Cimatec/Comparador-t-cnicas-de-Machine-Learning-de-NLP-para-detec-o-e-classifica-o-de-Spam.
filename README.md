@@ -1,8 +1,23 @@
+![Projeto 04 — Comparador de técnicas de NLP para detecção de spam e phishing](docs/assets/capa-projeto-04.png)
+
 # Comparador de NLP para mensagens
+
+[Comece aqui](docs/COMECE-AQUI.md) · [Aulas](docs/aulas.md) · [Quadro de tarefas](https://github.com/users/andredeomondes/projects/1) · [Contribuir](CONTRIBUTING.md)
 
 Projeto 04 da AWS SBG SENAI CIMATEC. O objetivo é comparar classificadores de texto para mensagens, registrar os resultados e disponibilizar uma interface de teste em Streamlit.
 
 **Entrega prevista:** 7 de dezembro de 2026. **Estado atual:** estrutura de trabalho preparada; implementação conduzida nas aulas e nas issues.
+
+## Como o comparador vai funcionar
+
+Uma mensagem passa pelo pipeline de texto do modelo escolhido. A interface apresenta a classificação e permite consultar os resultados dos modelos avaliados com a mesma divisão de dados.
+
+| Etapa | Tecnologias | Resultado esperado |
+| --- | --- | --- |
+| Preparar os dados | Python e pandas | Base auditada e divisão reproduzível |
+| Treinar e comparar | scikit-learn e TF-IDF | Baseline, Naive Bayes e regressão logística |
+| Salvar os experimentos | Joblib | Pipelines completos e metadados |
+| Explorar os resultados | Streamlit | Análise de mensagens e comparação dos modelos |
 
 ## Começar
 
@@ -25,7 +40,7 @@ O dataset indicado tem rótulos binários agregados. O projeto não presume clas
 
 [Projeto 04 - AWS SBG SENAI CIMATEC](https://github.com/users/andredeomondes/projects/1)
 
-O quadro acompanha as issues deste repositório e está na conta do responsável técnico. O GitHub permite vincular a aba Projects do repositório somente a quadros da mesma organização.
+O quadro acompanha as issues deste repositório. Cada tarefa avança por **Backlog → Pronto → Em andamento → Em revisão → Concluído**, com entrega por PR e revisão de outra pessoa. Veja a [rotina da equipe](docs/rotina-equipe.md).
 
 ## Aulas e entregas
 
