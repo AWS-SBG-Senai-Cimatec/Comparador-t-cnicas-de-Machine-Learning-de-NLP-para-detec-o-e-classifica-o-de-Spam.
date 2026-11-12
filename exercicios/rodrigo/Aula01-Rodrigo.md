@@ -10,7 +10,7 @@ Aprendi como criar uma branch, como fazer um pull request, editar arquivo e real
 ## Explicação
 - Branch: Ramificação criada a parti de um repositorio, praticamente uma copia, onde a pessoa pode realizar modificações sem causar algo para a main
 - Commit: Guarda as modificações feitas na branch atual
-- Push: Enviar as modificações do repositorio que foi modificado para o repositorio remoto (provavelmente main)
+- Push: Enviar os commits da branch local para uma branch no repositório remoto.
 - Pull Request(PR): Requisição para revisão de uma branch, podendo ou não integrar um ramo a outro
 
 ## Observações
