@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-texto_vazio = ()
+texto_vazio = ("Texto")
 
 @dataclass(frozen=True)
 class resultVal:
