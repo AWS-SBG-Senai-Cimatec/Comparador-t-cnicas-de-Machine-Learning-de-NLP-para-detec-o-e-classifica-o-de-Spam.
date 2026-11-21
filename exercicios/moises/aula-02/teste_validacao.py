@@ -17,5 +17,5 @@ while True:
         print("Mensagem vazia, tente novamente!")
         
     else:
-        print(f"Mensagem: {msg} | Tamanho: {len(msg)} | Urgente?: {urgente}")
+        print(f"Mensagem: {msg} | Tamanho: {len(msg)} | Urgente: {urgente}")
         break
