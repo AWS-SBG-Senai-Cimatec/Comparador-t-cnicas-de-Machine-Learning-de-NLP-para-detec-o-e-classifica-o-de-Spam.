@@ -1,32 +1,21 @@
-## Aula 02 - Analisar texto no terminal
+# Aula 02 - Analisar texto no terminal
 
-# Objetivo
-Ler mensagem, limpar texto desnecessario, contar a quantidade de palavras e ver se tem urgente ou não
+Ler uma mensagem, remover espaços das pontas, contar caracteres e verificar se contém "urgente", ignorando maiúsculas.
 
-## Funções
-- lens() - retorna o numero de objetos
-- strip() - remove espaçamento em branco
+- `len()` conta caracteres da mensagem limpa, não palavras.
+- `strip()` remove espaços das pontas, preservando os internos.
+- `lower()` permite buscar "urgente" sem diferenciar maiúsculas.
+- `analise()` retorna a mensagem limpa, o tamanho e o indicador; para entrada vazia retorna `None`.
+- `main()` lê a entrada e mostra o resultado.
 
-      def analise(mensagem):
-      mens = mensagem.strip()
-      if mens == "": 
-            return None
-      tamanho = len(mens)
-      urg = "urgente" in mens.lower()
-      return mens, tamanho, urg
+O código da entrega foi preservado em [aula-02/analise.py](aula-02/analise.py), com a indentação corrigida na revisão técnica.
 
-      def main():
-          digitacao = input("Digite a mensagem: ")
-          result = analise(digitacao)
+Na raiz do repositório:
 
-      if result is None:
-         print("Esqueceu de escrever")
-         return 
+```bash
+python exercicios/rodrigo/aula-02/analise.py
+```
 
-      mens, tamanho, urg = result
-      print(f"Mensagem limpa: ", mens)
-      print(f"Tamanho: ", tamanho)
-      print(f"Contém 'urgente': ", urg)
+Casos conferidos na revisão técnica: `"  Ola  "` → tamanho 3 e indicador falso; `"URGENTE"` → tamanho 7 e indicador verdadeiro; `"   "` → entrada recusada.
 
-      main()
-    
+O indicador é apenas didático e não detecta phishing. Esses testes da revisão não substituem a explicação individual do autor.
