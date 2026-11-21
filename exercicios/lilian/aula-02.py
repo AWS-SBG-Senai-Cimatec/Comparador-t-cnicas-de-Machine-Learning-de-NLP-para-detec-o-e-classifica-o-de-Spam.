@@ -14,8 +14,9 @@ def meu_script():
     
     print(f"Texto original: {texto}")
     print(f"Texto sem espaço: {texto_branco}")
-    print(f"Tamanho do texto: {len(texto_indiferenciavel)}")
-    print(f"Texto indiferenciável: {texto}")
+    print(f"Tamanho do texto: {len(texto_branco)}")
+    print(f"Texto indiferenciável: {texto_indiferenciavel}")
+    print(f"Contém 'urgente': {'urgente' in texto_indiferenciavel}")
     
     return texto_indiferenciavel
 
