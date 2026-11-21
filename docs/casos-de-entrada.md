@@ -1,46 +1,62 @@
-# Casos de Entrada
+# Casos de entrada - Aula 02
 
-Documentação com o intuito de descrever o passo a passo para a execução do script que analisa mensagens suspeitas, bem como os casos de teste para validação do funcionamento da função 'analise()'.
+## B - Validação da futura interface
 
-## 1. Como executar o código
+`validar_mensagem(texto)`, em `src/validation.py`, recebe texto ou `None` e retorna `resultVal`, com `validacao` (bool), `texto` (str) e `orientacao` (str).
 
-1. Certifique-se de ter o Python instalado em sua máquina.
-2. Abra o terminal (ou prompt de comando).
-3. Navegue até a pasta 'src/validation.py'.
-4. Execute o comando no terminal aberto:
+A função remove espaços das pontas, preserva o conteúdo e os espaços internos e recusa uma entrada que fique vazia. Não classifica mensagens por palavras nem identifica spam/phishing.
 
-   ```bash
-   python validation.py
+| Entrada | validacao | texto | orientacao |
+| --- | --- | --- | --- |
+| `None` | `False` | `""` | Digite uma mensagem para continuar. |
+| `""` | `False` | `""` | Digite uma mensagem para continuar. |
+| `"   "` | `False` | `""` | Digite uma mensagem para continuar. |
+| `" Ola "` | `True` | `"Ola"` | `""` |
+| `"URGENTE"` | `True` | `"URGENTE"` | `""` |
+| `"  Olá  mundo  "` | `True` | `"Olá  mundo"` | `""` |
 
-## 2. Casos de teste
+Na futura interface, chamar a validação antes da inferência. Se `validacao` for falsa, mostrar `orientacao` e interromper a análise. Se for verdadeira, encaminhar `texto` ao pipeline quando estiver disponível. O campo `orientacao` contém o aviso ao usuário, não a mensagem a ser analisada.
 
-O código foi desenvolvido para remover espaços em branco extras, contar a quantidade de caracteres e verificar se a palavra "urgente" está presente, sem que haja distinção de maiúscula.
+### Como conferir
 
-### Caso SEM 'urgente'
+Com Python instalado, abrir o terminal na raiz do repositório:
 
-1. ENTRADA(INPUT): "Olá, tudo bem? Vamos marcar a reunião para amanhã."
-2. SAÍDA (OUTPUT):
-    Mensagem limpa: Olá, tudo bem? Vamos marcar a reunião para amanhã.
-    Tamanho: 48
-    Contém 'urgente': False
+```bash
+python -c "from src.validation import validar_mensagem; print(validar_mensagem('   ')); print(validar_mensagem(' Ola '))"
+```
 
-### Caso COM 'urgente'
+Saída:
 
-1. ENTRADA(INPUT): "Olá, tudo bem? Vamos marcar a reunião para amanhã."
-2. SAÍDA (OUTPUT):
-    Mensagem limpa: URGENTE! Você ganhou um prêmio, clique no link.
-    Tamanho: 47
-    Contém 'urgente': True
+```text
+resultVal(validacao=False, texto='', orientacao='Digite uma mensagem para continuar.')
+resultVal(validacao=True, texto='Ola', orientacao='')
+```
 
-### Caso com entrada vazia
+Executar apenas `python src/validation.py` não solicita entrada: o arquivo define uma função reutilizável.
 
-1. ENTRADA(INPUT): "  " (Usuário não digita)
-2. SAÍDA (OUTPUT): Esqueceu de escrever
+## A - Exercícios individuais no terminal
 
-### Caso de mensagem com espaços extras nas bordas
+Na raiz do repositório:
 
-1. ENTRADA(INPUT): " Preciso de ajuda "
-2. SAÍDA (OUTPUT):
-    Mensagem limpa: Preciso de ajuda
-    Tamanho: 16
-    Contém 'urgente': False
+```bash
+python exercicios/lilian/aula-02.py
+python exercicios/rodrigo/aula-02/analise.py
+```
+
+Executar um script por vez e digitar uma mensagem quando solicitado.
+
+| Entrada | Tamanho após strip() | Contém urgente | Resultado |
+| --- | --- | --- | --- |
+| `"  Ola  "` | 3 | `False` | Aceita |
+| `"URGENTE"` | 7 | `True` | Aceita |
+| `"uRgEnTe"` | 7 | `True` | Aceita |
+| `"   "` | — | — | Recusada |
+| `" Preciso de ajuda "` | 16 | `False` | Aceita |
+
+A busca por "urgente" pertence apenas ao exercício A e não representa detecção de fraude.
+
+## Registro de revisão técnica
+
+As contribuições de documentação de Lilian e Rodrigo foram consolidadas; a revisão do Moisés identificou problemas de construção do resultado e de orientação. Na revisão técnica de 21/11/2026 foram corrigidos a orientação para vazio, a busca por "urgente" no exercício da Lilian e a indentação do exercício do Rodrigo.
+
+Os testes de integração não substituem a atividade A individual do Moisés nem a explicação dos ajustes pelos autores.
