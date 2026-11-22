@@ -23,10 +23,10 @@ def padronizarRotulo(valor):
     rot = padronizacao(valor)
     if rot not in ("0","1"):
         raise ValueError ("")
-    return rot
+    return int(rot)
 
 def padronizarCsv(valor):
-    faltante = conferirC(valor)
+    faltante = conferirC(valor.keys())
     if faltante:
         raise ValueError("Não está presente colunas obrigatorias: ",faltante)
     return print(cTexto, padronizarTexto(valor[cTexto]),"\n",cRotulo, padronizarRotulo(valor[cRotulo]))
