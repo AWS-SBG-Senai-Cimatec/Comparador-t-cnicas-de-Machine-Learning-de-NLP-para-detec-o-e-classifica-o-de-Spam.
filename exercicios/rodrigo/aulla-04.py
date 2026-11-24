@@ -1,0 +1,18 @@
+import pandas as pd
+
+df = pd.read_csv("mensagens_didaticas.csv")
+linhas = len(df)
+classes = df["rotulo"].value_counts()
+limp = df["texto"].fillna("").str.strip()
+quant = (limp == "").sum()
+padronizar = limp.str.lower()
+rep = padronizar.duplicated().sum()
+print(df)
+print("\n======")
+print(linhas,": Total de linhas")
+print("\n======")
+print(classes)
+print("\n======")
+print(quant,": Total de linhas vazia")
+print("\n======")
+print(rep,": Total de repetições")
